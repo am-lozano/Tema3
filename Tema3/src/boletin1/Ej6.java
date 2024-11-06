@@ -33,12 +33,7 @@ public class Ej6 {
 		for (int valor : tabla) {
 			
 			// comprobamos si los numeros son par o impar y lo mostramos
-			if (valor % 2 == 0)
-				System.out.println(valor + " par");
-			else 
-				System.out.println(valor + " impar");
-			
-//			valor % 2 == 0 ? valor + " par" : valor + " impar";
+			System.out.println(valor % 2 == 0 ? valor + " par" : valor + " impar");
 				
 		}
 		
