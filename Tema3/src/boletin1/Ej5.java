@@ -21,9 +21,15 @@ public class Ej5 {
 
 		// variable para la tabla
 		int tabla[] = new int[10];
-		
+
 		// variable para calcular la suma de los valores de la tabla
 		int suma = 0;
+
+		// variable para el numero minimo
+		int min;
+
+		// variable para el numero maximo
+		int max;
 
 		// creamos el bucle para pedir los numeros al usuario y los almacenamos en la
 		// tabla (array)
@@ -37,15 +43,29 @@ public class Ej5 {
 			tabla[i] = num;
 
 		}
-		
+
+		// asignamos por defecto el numero maximo y minimo al primer valor de la tabla
+		min = tabla[0];
+		max = tabla[0];
+
 		// recorremos la tabla y hacemos la suma de los valores
 		for (int valor : tabla) {
 			suma += valor;
+
+			// recorremos la tabla y comprobamos los siguientes numeros
+			if (valor < min) 
+				min = valor;
+			if (valor > max) 
+				max = valor;
+			
 		}
-		
+
 		// mostramos la suma de la tabla
 		System.out.println(suma);
 		
+		// mostramos el numero maximo y minimo
+		System.out.println("Maximo: " + max + ", y el minimo: ");
+
 		sc.close();
 
 	}
