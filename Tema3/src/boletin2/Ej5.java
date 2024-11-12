@@ -1,5 +1,6 @@
 package boletin2;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -15,37 +16,51 @@ public class Ej5 {
 		 * 
 		 */
 
-		// Crear el array de tamaño 1000
-		int[] array = new int[1000];
+		// clase random para generar numeros aleatorios
 		Random rand = new Random();
 
-		// Rellenar el array con números aleatorios entre 0 y 99
-		for (int i = 0; i < array.length; i++) {
-			array[i] = rand.nextInt(100); // Valor aleatorio entre 0 y 99
-		}
-
-		// Solicitar al usuario un número a buscar
+		// creamos el escaner
 		Scanner sc = new Scanner(System.in);
 
-		System.out.print("Introduce un número entre 0 y 99 para buscar: ");
-		int numBuscado = sc.nextInt();
+		// creamos la tabla
+		int[] tabla = new int[1000];
 
-		// Contar cuántas veces aparece el número en el array
+		// variable para los numeros aleatorios
+		int num = rand.nextInt(1, 100);
+
+		// variable para contar cuantas veces aparece el numbero buscando
 		int contador = 0;
-		for (int i = 0; i < array.length; i++) {
-			if (array[i] == numBuscado) {
+
+		// variable para el valor buscado en la tabla
+		int busqueda;
+
+		// rellenamos la tabla con valores aleatorios
+		for (int i = 0; i < tabla.length; i++) {
+
+			// asignamos el valor aleatorio a la tabla
+			tabla[i] = num;
+
+			// volvemos a generar un numero aleatorio para asignar a la tabla
+			num = rand.nextInt(1, 100);
+		}
+
+		// preguntamos el valor aleatorio que se quiere buscar
+		System.out.println("Introduzca un numero entre 0 y 99:");
+		busqueda = sc.nextInt();
+
+		// revisamos la tabla y si el valor buscado es igual sumamos 1 al contador
+		for (int i : tabla) {
+
+			if (busqueda == tabla[i])
 				contador++;
-			}
+
 		}
 
-		// Mostrar si el número existe y cuántas veces
-		if (contador > 0) {
-			System.out.println("El número " + numBuscado + " existe en el array y aparece " + contador + " veces.");
-		} else {
-			System.out.println("El número " + numBuscado + " no existe en el array.");
-		}
+		System.out.println("El valor: " + busqueda + " aparece: " + contador + " veces");
 
+		// cerramos el escaner
 		sc.close();
+
 	}
 
 }

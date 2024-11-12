@@ -2,7 +2,7 @@ package boletin2;
 
 import java.util.Arrays;
 
-public class Ej8 {
+public class Ej7 {
 
 	public static void main(String[] args) {
 
@@ -14,18 +14,24 @@ public class Ej8 {
 		 * 
 		 */
 
-		// Crear el array con el tamaño adecuado (sumatoria de 1+2+...+10 = 55)
-		int[] array = new int[55];
-		int index = 0;
+		// creamos la tabla
+		int[] tabla = new int[55];
+		
+		// variable para usar en el for mas adelante
+		int inicio = 0;
 
-		// Rellenar el array con la secuencia de números
+		// rellenamos la tabla con la secuencia de números
 		for (int i = 1; i <= 10; i++) {
-			// Llenar el array con el número 'i', 'i' veces
-			Arrays.fill(array, index, index + i, i);
-			index += i;
+			
+			// rellenamos la tabla con los valores
+			Arrays.fill(tabla, inicio, inicio + i, i);
+			
+			// volvemos a inicializar la variable inicio
+			inicio += i;
 		}
 
-		// Mostrar el array completo
-		System.out.println("Array resultante: " + Arrays.toString(array));
+		// mostramos el resultado de la tabla
+		System.out.println(Arrays.toString(tabla));
+		
 	}
 }
