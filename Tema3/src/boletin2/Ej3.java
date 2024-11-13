@@ -6,9 +6,16 @@ public class Ej3 {
 
 	public static void main(String[] args) {
 
+		/*
+		 * Crea un programa que cree un array de tamaño 30 y lo rellene con valores
+		 * aleatorios entre 0 y 9. Luego ordena los valores del array y los mostrará por
+		 * pantalla.
+		 */
+		
+		// creamos el scaner
 		Scanner sc = new Scanner(System.in);
 
-		// Pedir al usuario el tamaño y valor
+		// pedimos los datos (tamano y valor)
 		System.out.print("Introduce el tamaño del array: ");
 		int tamaño = sc.nextInt();
 
