@@ -1,5 +1,7 @@
 package boletin3;
 
+import java.util.Arrays;
+
 public class Ej4 {
 
 	public static void main(String[] args) {
@@ -13,27 +15,21 @@ public class Ej4 {
 		// creamos la tabla
 		int[][] tabla = new int [10] [10];
 		
-		// variable para los valores de cada celda
-		int celda;
-		
-		// variable para el multiplo del primer valor
-		int mul = 0;
-		
 		// mostramos la tabla
 		for(int i = 0; i<tabla.length; i++) {
 			for(int j = 0; j<tabla[i].length; j++) {
-				System.out.print(tabla[i][j] + " ");
 				
-				mul++;
+				tabla[i][j] = (i + 1) * (j + 1);
 				
-				celda = (j + 1) * mul;
-				
-				tabla [i] [j] = celda;
+				System.out.print(tabla[i][j] + "\t");
 				
 			}
+			
 			System.out.println();
+			
 		}
-
+		
+		
 	}
 
 }
