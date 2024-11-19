@@ -21,6 +21,7 @@ public class Ej3 {
 		array[positionFly] = 1;
 
 		do {
+			
 			System.out.println("Introduce a position of the fly");
 			positionUser = reader.nextInt();
 
@@ -30,6 +31,7 @@ public class Ej3 {
 					System.out.println();
 					Arrays.fill(array, 0);
 					positionFly = rand.nextInt(0, 10);
+					array[positionFly] = 1;
 				} else {
 					System.out.println("The fly is far of this position. The fly is in the same position");
 					System.out.println();
@@ -40,6 +42,7 @@ public class Ej3 {
 					System.out.println();
 					Arrays.fill(array, 0);
 					positionFly = rand.nextInt(0, 10);
+					array[positionFly] = 1;
 
 				} else {
 					System.out.println("The fly is far of this position. The fly is in the same position");
@@ -53,8 +56,9 @@ public class Ej3 {
 					System.out.println();
 					Arrays.fill(array, 0);
 					positionFly = rand.nextInt(0, 10);
+					array[positionFly] = 1;
 				} else {
-					System.out.println("The fly is far of this position. The fly is in the same position");
+					System.out.println("Has encontrado a la mosca");
 					System.out.println();
 				}
 			}

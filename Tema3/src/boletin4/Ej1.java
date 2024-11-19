@@ -11,23 +11,23 @@ public class Ej1 {
 		 */
 		
 		// variable para almacenar la tabla
-		int[] tabla;
+		int[] tablaEnteros = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 		
-		System.out.println(suma(1));
+		int sumaEnteros = suma(tablaEnteros);
+		
+		System.out.println(sumaEnteros);
 		
 	}
 	
-	static int suma (int num) {
+	static int suma (int[] tabla) {
 		
-		int suma = 0;
+		int sumaTabla = 0;
 		
-		int[] tabla = {1,2,3,4,5,6,7,8,9,10};
-		
-		for (int i = 0; i < tabla.length; i++) {
-			suma += tabla[i];
+		for (int valor : tabla) {
+			sumaTabla += valor;
 		}
 		
-		return suma;
+		return sumaTabla;
 		
 	}
 
