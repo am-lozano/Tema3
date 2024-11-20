@@ -12,36 +12,40 @@ public class Ej4 {
 		 * qué posición lo encuentra; y en caso contrario, devolverá -1.
 		 * 
 		 */
-
+		
+		// variable para la tabla
 		int[] tabla = { 1, 2, 3, 4, 5 };
-
-		System.out.println(buscar());
-
+		
+		// como la funcion tiene varias variables se le asigna a una variable para utilizarla
+		int busqueda = buscar(tabla, 3);
+		
+		// usamos la funcion para devolver el resultado
+		System.out.println(busqueda);
+		
 	}
 
 	static int buscar(int t[], int clave) {
 
 		// variable para ir comprobando si los numeros son iguales
-		int indice = 0;
-
-		// valor que se quiere encontrar
-		int valor = 15;
-
+		int buscar = 0;
+		
+		clave = 2;
+		
 		// revisamos la tabla y mientras no encontremos el numero y no terminemos la
 		// tabla seguimos
-		while (indice < t.length && valor != t[indice]) {
+		while (buscar < t.length && clave != t[buscar]) {
 
-			indice++;
+			buscar++;
 		}
 
-		// si el indice al acabar es menor que la longitud de la tabla significa que se
+		// si el buscar al acabar es menor que la longitud de la tabla significa que se
 		// ha encontrado el elemento
-		if (indice < t.length)
-			System.out.println("El valor " + valor + " se encuentra en la posicion " + indice);
-		else // indice <= tabla -> no existe el elemento en la tabla
-			System.out.println("El valor " + valor + " no se encuentra en la tabla");
+		if (buscar < t.length)
+			System.out.println("El valor " + clave + " se encuentra en la posicion " + buscar);
+		else // buscar <= tabla -> no existe el elemento en la tabla
+			System.out.println("El valor " + clave + " no se encuentra en la tabla");
 
-		return indice;
+		return buscar;
 	}
 
 }
