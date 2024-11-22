@@ -1,4 +1,4 @@
-package boletin4;
+package boletin4uni;
 
 public class Ej2 {
 
