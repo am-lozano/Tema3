@@ -28,7 +28,7 @@ public class Ej1 {
 		int numRandom = rand.nextInt(0, 1001);
 		
 		// variable para almacenar la tabla con el valor minimo y maximo
-		int[] minimoMaximo = minMax(tabla);
+		int[] minimoMaximo;
 		
 		// rellenamos la tabla con los numeros generados aleatoriamente
 		for (int i = 0; i < tabla.length; i++) {
@@ -42,6 +42,8 @@ public class Ej1 {
 				
 			}
 		}
+		
+		minimoMaximo = minMax(tabla);
 		
 		// mostramos la tabla rellena
 //		for (int i = 0; i < tabla.length; i++) {
