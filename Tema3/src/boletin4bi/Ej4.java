@@ -15,13 +15,13 @@ public class Ej4 {
 		 */
 		
 		// variable para almacenar la matriz a comprobar
-//		int[][] tabla = {{4,9,2}, {3,5,7}, {8,1,6}};
-		int[][] tabla = {{5,10,3}, {4,6,8}, {9,2,7}};
+		int[][] tabla = {{4,9,2}, {3,5,7}, {8,1,6}};
+//		int[][] tabla = {{5,10,3}, {4,6,8}, {9,2,7}};
 //		int[][] tabla = {{4,8,2}, {6,5,7}, {8,4,6}};
 		
 		// variables para recoger los valores de los metodos
 		boolean fila = magFila(tabla);
-		boolean col = magCol(tabla);
+//		boolean col = magCol(tabla);
 		
 		System.out.println("Su matriz es: ");
 		
@@ -38,17 +38,14 @@ public class Ej4 {
 		System.out.println();
 		
 		// comprobamos los valores de salida de los metodos para saber si laa matriz es magica
-		if (!fila && !col)
-			System.out.println("La matriz es magica");
-		else
-			System.out.println("La matriz no es magica");
+		System.out.println(fila ? "Es magica" : "No es magica");
 		
 	}
 	
 	// metodo para comprobar las filas
 	static boolean magFila (int tabla[][]) {
 		
-		boolean enc = false;
+		boolean enc = true;
 		
 		// variable para la suma de los valores de la tabla
 		int suma = 0;
@@ -61,7 +58,7 @@ public class Ej4 {
 		int j = 0;
 		
 		// reocrremos la tabla por filas y sumamos sus valores
-		while (i < tabla.length && !enc) {
+		while (i < tabla.length && enc) {
 			while (j < tabla[i].length) {
 				
 				suma += tabla[i][j];
@@ -74,9 +71,10 @@ public class Ej4 {
 			
 			// comprobamos la suma de las filas de la matriz
 			if (suma != sumaFilaCol)
-				enc = true;
+				enc = false;
 			
 			suma = 0;
+			j = 0;
 			
 			i++;
 		}
@@ -87,7 +85,7 @@ public class Ej4 {
 	// metodo para comprobar las columnas
 		static boolean magCol (int tabla[][]) {
 			
-			boolean enc = false;
+			boolean enc = true;
 			
 			// variable para la suma de los valores de la tabla
 			int suma = 0;
@@ -100,25 +98,25 @@ public class Ej4 {
 			int j = 0;
 			
 			// reocrremos la tabla por filas y sumamos sus valores
-//			while (j < tabla[0].length && !enc) {
-//				while (i < tabla[j].length) {
-//					
-//					suma += tabla[j][i];
-//					
-//					j++;
-//				}
-//				
-//				if (j == 0)
-//					sumaFilaCol = suma;
-//				
-//				// comprobamos la suma de las filas de la matriz
-//				if (suma != sumaFilaCol)
-//					enc = true;
-//				
-//				suma = 0;
-//				
-//				i++;
-//			}
+			while (j < tabla[0].length && !enc) {
+				while (i < tabla[j].length) {
+					
+					suma += tabla[j][i];
+					
+					i++;
+				}
+				
+				if (j == 0)
+					sumaFilaCol = suma;
+				
+				// comprobamos la suma de las filas de la matriz
+				if (suma != sumaFilaCol)
+					enc = false;
+				
+				suma = 0;
+				
+				j++;
+			}
 			
 			return enc;
 		}
