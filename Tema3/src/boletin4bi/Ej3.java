@@ -47,7 +47,10 @@ public class Ej3 {
 	// metodo para averiguar si la tabla es simetrica
 
 	static boolean simetria(int[][] t) {
-
+		
+		return simetrica;
+		
+		/*
 		// variables para almacenar los valores por la derecha y por la izquierda de la
 		// matriz
 		int inicio;
@@ -81,14 +84,14 @@ public class Ej3 {
 				 * 
 				 * de esta forma vamos recorriendo la tabla por columnas en ambos sentidos a la vez y comprobando dichos valores para saber si es simetrica
 				 */
-				inicio = t[i][j];
-				ultimo = t[k][j];
-				
-				if (inicio != ultimo)
-					simetrica = false;
-
-			}
-		}
+//				inicio = t[i][j];
+//				ultimo = t[k][j];
+//				
+//				if (inicio != ultimo)
+//					simetrica = false;
+//
+//			}
+//		}
 
 //		for (int i = 0; i < t.length; i++) {
 //			for (int j = 0; j < t[i].length; j++) {
@@ -101,7 +104,7 @@ public class Ej3 {
 //			}
 //		}
 
-		return simetrica;
+
 
 	}
 

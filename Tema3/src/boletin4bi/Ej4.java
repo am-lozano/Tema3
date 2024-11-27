@@ -41,6 +41,7 @@ public class Ej4 {
 		System.out.println(fila ? "Es magica" : "No es magica");
 		
 	}
+
 	
 	// metodo para comprobar las filas
 	static boolean magFila (int tabla[][]) {
