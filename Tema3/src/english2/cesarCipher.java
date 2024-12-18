@@ -22,7 +22,7 @@ public class cesarCipher {
 
 		for (int i = 0; i < phrase.length(); i++) {
 			character = phrase.charAt(i);
-			if (character >= && character <= 90 || character >= 48 && character <= 57) {
+			if (character >= 9  && character <= 90 || character >= 48 && character <= 57) {
 				if (shift > 0) {
 					if (character == 'Z') {
 						character = 'A';

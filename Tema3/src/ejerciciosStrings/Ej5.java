@@ -23,15 +23,15 @@ public class Ej5 {
 		// variable para ir anyadiendo las palabras introducidas
 		String frase = "";
 		
-		// variable para terminar de pedir palabras para completar la frase
-		String terminar = "FIN";
+		// constante para terminar de pedir palabras para completar la frase
+		final String TERMINAR = "FIN";
 		
 		// pedimos las palabras
 		System.out.println("Introduzca una palabra para anyadir a la frase:");
 		palabra = sc.nextLine();
 		
 		// bucle para anyadir las palabras introducidas
-		while (palabra != terminar.toUpperCase()) {
+		while (!palabra.toUpperCase().equals(TERMINAR)) {
 			
 			// anyadimos las palabras introducidas a la frase
 			frase += " " + palabra;
@@ -39,7 +39,11 @@ public class Ej5 {
 			// volvemos a pedir una palabra
 			System.out.println("Introduzca una palabra para anyadir a la frase:");
 			palabra = sc.nextLine();
+			
 		}
+		
+		// espacio en blanco para separar
+		System.out.println();
 		
 		// devolvemos la frase final
 		System.out.println(frase);
