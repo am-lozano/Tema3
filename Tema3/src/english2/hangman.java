@@ -10,7 +10,7 @@ public class hangman {
 
 	public static void main(String[] args) {
 
-		String[] words = { "python", "java", "html", "css", "javaScript", "php", "json" };
+		String[] words = { "python", "java", "html", "css", "javascript", "php", "json" };
 
 		int attempts = 10;
 
@@ -20,46 +20,58 @@ public class hangman {
 
 		String randomWord;
 
-		String wordToGuess = "";
+		String clueWord = "";
 
 		char letter;
 
-		int pos;
+		int pos = 0;
+
+		boolean found = false;
 
 		random = rand.nextInt(0, words.length);
 
 		randomWord = words[random];
 
 		for (int i = 0; i < randomWord.length(); i++) {
-			wordToGuess+= "-";
+			clueWord += "-";
 		}
 
-		System.out.println(wordToGuess);
-		
-		char[] guess = wordToGuess.toCharArray();
 
-		System.out.println("Introduce a letter");
-		letter = sc.next().charAt(0);
-
-		pos = randomWord.indexOf(letter);
-
-		while (attempts > 0 ) {
-			while (pos > 0) {
-				guess[pos] = letter;
-				pos = randomWord.indexOf(letter, pos);
-			if (pos ) {
-				attempts--;
-
-			}
+		do {
 			
-			
-			System.out.println(Arrays.toString(guess));
 
-			
 			System.out.println("Introduce a letter");
-			letter = sc.next().charAt(0);
+			letter = sc.nextLine().toLowerCase().charAt(0);
+			
+			while (pos < randomWord.length()) {
 
+				if (letter == randomWord.charAt(pos)) {
+					clueWord = clueWord.substring(0, pos) + letter + clueWord.substring(pos + 1);
+					found = true;
+				}
 
+				pos++;
+			}
+
+			if (!found) {
+				attempts--;
+			}
+
+			System.out.println(clueWord);
+
+			System.out.println("Attempts -> " + attempts);
+
+			pos = 0;
+			found = false;
+
+		} while (attempts > 0 && !clueWord.equalsIgnoreCase(randomWord));
+
+		System.out.println();
+
+		if (attempts > 0) {
+			System.out.println("CONGRATULATIONS! YOU WON");
+		} else {
+			System.err.println("GAME OVER");
 		}
 
 		sc.close();
