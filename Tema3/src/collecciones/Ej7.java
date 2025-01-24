@@ -136,6 +136,9 @@ public class Ej7 {
 			case 3 -> {
 				fin = true;
 			}
+			default ->{
+				System.err.println("Introduzca un valor valido");
+			}
 			}
 
 		} while (!fin);
