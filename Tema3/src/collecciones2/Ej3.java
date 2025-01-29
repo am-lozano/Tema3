@@ -20,10 +20,13 @@ public class Ej3 {
 		 */
 		
 		// lista para guardar las las palabras de la oracion
-		ArrayList<Character> cad = new ArrayList<>();
+		ArrayList<String> cad = new ArrayList<>();
 		
 		// conjunto para saber la frecuencia de cada letra
 		LinkedHashMap<Character, Integer> cantidad = new LinkedHashMap<>();
+		
+		// variable para anadir las claves en el mapa, estas seran las letras del abecedario
+		char letras = 'a';
 		
 		// variable para almacenar la oracion
 		String oracion = "En un agujero en el suelo, vivia un hobbit. No un agujero humedo, sucio, repugnante, con restos de gusanos y olor a fango, ni tampoco un agujero, seco, desnudo y arenoso, sin nada en que sentarse o que comer: era un agujero-hobbit, y eso significa comodidad";
@@ -34,15 +37,19 @@ public class Ej3 {
 		// pasamos el texto a letras minusculas
 		oracion = oracion.toLowerCase();
 		
-		// bucle for-each para anadir las los caracteres de la oracion
-		for (char letra : oracion.toCharArray()) {
-			
-			// si el caracter de la oracion es una letra lo anadimos en la lista
-			if (Character.isLetter(letra)) {
-				cad.add(letra);
-			}
-			
-		}
+		// anadimos la oracion a la lista cad
+		cad.add(oracion);
+		
+		
+//		// bucle for-each para anadir las los caracteres de la oracion
+//		for (char letra : oracion.toCharArray()) {
+//			
+//			// si el caracter de la oracion es una letra lo anadimos en la lista
+//			if (Character.isLetter(letra)) {
+////				cad.add(letra);
+//			}
+//			
+//		}
 		
 		
 	}
